@@ -1,17 +1,35 @@
 
-import {makeAutoObservable} from 'mobx'
-
+import { makeAutoObservable } from 'mobx'
+import servicioPeliculas from '../services/servicioPeliculas'
 export default class PeliculasStore
-
 {
-    constructor()
-    {makeAutoObservable(this)}
-   nombre = "Pesadilla en la calle del infierno"
-   listado = []
+	constructor()
+	{ makeAutoObservable(this) }
+  titulo = "Video centro"
+   listadoCargado = false
+   listado =[]
+   async cargarListado()
+   {
+	   try{
+		   this.listado = await servicioPeliculas.leerPeliculas()
+		   listadoCargado= true
+	   }
 
-    cambiarNombre(nombre)
-    {
-        this.nombre = nombre
-    }
+	   catch (error)
+	   {
+		   this.listadoCargado = false
+	   }
+   }
+		
+   limpiar()
+   {
+	   this.listado =[]
+	   this.listadoCargado = false
+   }
+
+	cambiarNombre( nombre,indice )
+	{
+/*		this.listado[0].nombre = nombre*/
+    this.titulo = nombre
+	}
 }
-{/* Tarea hacer el listado con bootstrap */}

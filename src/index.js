@@ -17,7 +17,7 @@ ReactDOM.render
       <div className="container-fluid">
         <Switch>
           <Route exact path="/" component={ Home }/>
-          <Route exact path="/peliculas" component={ ListadoPeliculas }/>
+          <Route exact path="/peliculas/:clasificacion" component={ ListadoPeliculas }/>
         </Switch>
         <Footer/>  {/*no cambia en todas las páginas*/}
       </div>
