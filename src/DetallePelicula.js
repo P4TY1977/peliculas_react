@@ -8,12 +8,12 @@ class DetallePelicula extends React.Component
 
         return(
             
-            <div class="col">
-                <div class="card text-center text-white bg-dark border-light h-100">
-                    <img src={img} class="card-img-top" alt=""/>
-                    <div class="card-body bg-gradient">
-                        <h5 class="card-title">{ nombre }</h5>
-                        <p class="card-text">{ genero }</p>
+            <div className="col">
+                <div className="card text-center text-white bg-dark border-light h-100">
+                    <img src={img} className="card-img-top" alt=""/>
+                    <div className="card-body bg-gradient">
+                        <h5 className="card-title">{ nombre }</h5>
+                        <p className="card-text">{ genero }</p>
                     </div>
                 </div>
             </div>
