@@ -7,24 +7,24 @@ class Home extends React.Component
     {
               
         return(  //siempre paréntesis para que no se confunda el compilador
-            <div class="col-12">
-                <div class="row justify-content-center gap-3">
-                <div class="col-3 border border-light rounded-3 p-3">
-                    <img class="img-fluid" src="images/infantil.jpg"/>
-                    <div class="text-center mt-5">
-                        <Link to="/peliculas/A" class="link-light">Peliculas Infantiles</Link>
+            <div className="col-12">
+                <div className="row justify-content-center gap-3">
+                <div className="col-3 border border-light rounded-3 p-3">
+                    <img className="img-fluid" src="images/infantil.jpg"/>
+                    <div className="text-center mt-5">
+                        <Link to="/peliculas/A" className="link-light">Peliculas Infantiles</Link>
                     </div>
                 </div>
-                <div class="col-3 border border-light rounded-3 p-3">
-                <img class="img-fluid" src="images/adolescentes.jpg"/>
-                <div class="text-center mt-5">
-                    <Link to="/peliculas/B" class="link-light">Peliculas para Adolescentes</Link> 
+                <div className="col-3 border border-light rounded-3 p-3">
+                <img className="img-fluid" src="images/adolescentes.jpg"/>
+                <div className="text-center mt-5">
+                    <Link to="/peliculas/B" className="link-light">Peliculas para Adolescentes</Link> 
                 </div>
               </div>
-              <div class="col-3 border border-light rounded-3 p-3 align-content-center">
-              <img class="img-fluid" src="images/adultos.jpg"/>
-              <div class="text-center mt-5">
-                <Link to="/peliculas/C" class="link-light">Peliculas para Adultos</Link>
+              <div className="col-3 border border-light rounded-3 p-3 align-content-center">
+              <img className="img-fluid" src="images/adultos.jpg"/>
+              <div className="text-center mt-5">
+                <Link to="/peliculas/C" className="link-light">Peliculas para Adultos</Link>
                </div>
               </div>
                 

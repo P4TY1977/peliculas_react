@@ -8,8 +8,9 @@ class ListadoPeliculas extends React.Component
     constructor(props){
         super(props)
         const {peliculas}= props
-        if (! peliculas.listadoCargado)
+        if (! peliculas.listadoCargado)       
             peliculas.cargarListado()
+        
     }
 
     renombrarPelicula()
@@ -21,21 +22,31 @@ class ListadoPeliculas extends React.Component
     {
         const {peliculas}= this.props
         const clasificar=this.props.match.params.clasificacion
-        console.log("params "+ clasificar )
+       
         const peliculasFiltradas = peliculas.listado.filter( pelicula => pelicula.clasificacion == clasificar )
         return(  //siempre paréntesis para que no se confunda el compilador
-            <div class="text-center"> 
-                <div class="row">
-                    <div class="col fs-3 text-center mb-3">
+            <div className="text-center"> 
+            {console.log("error listado "+peliculas.errorListado)}
+            {
+                peliculas.errorListado &&
+                (
+                    <div className="alert alert-danger" onClick={ () => peliculas.errorListado = false}>
+                        Hubo un error al solicitar las películas.
+                        Por favor repórtalo con el administrador de sistemas
+                    </div>
+                )
+            }
+                <div className="row">
+                    <div className="col fs-3 text-center mb-3">
                         Titulos {clasificar=="A"?"Infantil":(clasificar=="B"?"Adolescentes":"Adultos")}
                     </div>
                 </div>
-            <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div className="row row-cols-1 row-cols-md-4 g-4">
             { peliculasFiltradas.map(pelicula => (
              <DetallePelicula datos={ pelicula }/>
             ))}
             </div>
-                <Link to="/" class="btn btn-outline-light mt-5 mb-5"><i class="bi-house-fill display-4"></i></Link>                
+                <Link to="/" className="btn btn-outline-light mt-5 mb-5"><i className="bi-house-fill display-4"></i></Link>                
             </div>
         )
     }
