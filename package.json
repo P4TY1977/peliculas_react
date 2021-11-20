@@ -34,5 +34,11 @@
     "reload": "^3.2.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
+  },
+  "jest":{
+    "testPatterns":[
+      "/node_modules/","/src/", "/cypress/"
+    ]
+
   }
 }
