@@ -37,7 +37,7 @@ describe ('utils',()=>
         it('debe continuar después de 1 segundo', async()=>{
            await utils.esperar(1000) // return 
         })
-        xit ('debe fallar si pasamos intervalo 0', async ()=>{
+        xit ('debe fallar si pasamos intervalo 0', async ()=>{ //deshabilitada
             try {
                 await utils.esperar(0)
                 expect.fail()
@@ -46,6 +46,26 @@ describe ('utils',()=>
                 expect(error.message).to.be.ok
                 expect(error.message).to.equal('no se pasó una espera adecuada')
             }
+        })
+    })
+
+    describe('ejecutarDespues',()=>
+    {
+        it('debe ejecutar despues', done =>
+        {
+            let variable=0
+
+            utils.ejecutarDespues(100, () => {variable++})
+
+            const verification = () =>
+            {
+                expect(variable).equal(1)
+                done()
+            }
+
+            setTimeout(verification, 110)
+
+
         })
     })
 })
