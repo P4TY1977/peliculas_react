@@ -15,4 +15,9 @@ const ejecutarDespues = (milis, accion) =>
     setTimeout(accion, milis)
 }
 
-export default {ejecutarDespues, esperar, separar}
+const ejecutarRepetido =(milis, accion) =>
+{
+    return setInterval(accion, milis) //interval se queda corriendo
+}
+
+export default {ejecutarDespues, ejecutarRepetido, esperar, separar}
