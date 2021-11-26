@@ -19,6 +19,7 @@ export default class PeliculasStore
 
 	   catch (error)
 	   {
+		   console.error(error)
 		   this.errorListado = true
 		   this.listadoCargado = false
 	   }
