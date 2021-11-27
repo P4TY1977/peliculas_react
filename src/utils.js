@@ -10,4 +10,9 @@ const esperar = milis =>
         })
 }
 
-export default {esperar, separar}
+const ejecutarDespues = (milis, accion) =>
+{
+    setTimeout(accion, milis)
+}
+
+export default {ejecutarDespues, esperar, separar}
