@@ -5,19 +5,32 @@ describe('utilsStringDate',()=>
 {
     describe('convertStringToDate',()=>
     {
-        it('Convierte una cadena en fecha, si no es una fecha válida pone la fecha actual', ()=>
+        it('Convierte una cadena en fecha, si no es una fecha válida pone la fecha actual (recibe cadena vacía)', ()=>
         {
             const fecha = utilsStringDate.convertStringToDate ('') 
             verificarObjetoDate (fecha)
-            const fechaF1 = utilsStringDate.convertStringToDate ('2021/10/12') 
-            verificarObjetoDate(fechaF1)
-            expect (fechaF1.getMonth()).to.equal(9)
-            expect (fechaF1.getDate()).to.equal(12)
-            expect (fechaF1.getFullYear()).to.equal(2021)
+            
+        })    
+        it('Convierte una cadena en fecha, si no es una fecha válida pone la fecha actual (recibe cadena con formato válido)', ()=>
+        {
+        const fechaF1 = utilsStringDate.convertStringToDate ('2021/10/12') 
+        verificarObjetoDate(fechaF1)
+        expect (fechaF1.getMonth()).to.equal(9)
+        expect (fechaF1.getDate()).to.equal(12)
+        expect (fechaF1.getFullYear()).to.equal(2021)
+        })
+        it('Convierte una cadena en fecha, si no es una fecha válida pone la fecha actual (recibe null)', ()=>
+        {
             const fechaNull =utilsStringDate.convertStringToDate(null)
             verificarObjetoDate (fechaNull)
+        })
+        it('Convierte una cadena en fecha, si no es una fecha válida pone la fecha actual (recibe cadena con formato no válido)', ()=>
+        {
             const fechaActual = utilsStringDate.convertStringToDate ('blabla') 
-            verificarObjetoDate (fechaActual)           
+            verificarObjetoDate (fechaActual)  
+        })
+        it('Convierte una cadena en fecha, si no es una fecha válida pone la fecha actual (recibe undefined)', ()=>
+        {         
             const fechaIndefinida = utilsStringDate.convertStringToDate (undefined) 
             verificarObjetoDate(fechaIndefinida)
         })
