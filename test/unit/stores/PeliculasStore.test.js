@@ -2,7 +2,7 @@ import {assert, expect} from 'chai'
 import sinon from 'sinon'
 
 import PeliculasStore from '../../../src/stores/PeliculasStore'
-import servicioPeliculas from '../../../src/services/servicioPeliculas'
+import ServicioPeliculas from '../../../src/services/ServicioPeliculas'
 
 const sandbox = sinon.createSandbox()
 
