@@ -11,3 +11,5 @@ jobs:
       with:
         node-version: '12'
     - run: npm install
+    - name: ejecutar pruebas unitarias
+      run: npm run test-unit
