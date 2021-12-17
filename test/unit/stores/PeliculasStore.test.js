@@ -20,7 +20,7 @@ describe ('PeliculasStore', () =>
     {
         it('debe cargar listado de peliculas',async()=>
         {
-            sandbox.stub(servicioPeliculas, 'leerPeliculas').resolves (listadoPrueba) //objeto falso
+            sandbox.stub(ServicioPeliculas, 'leerPeliculas').resolves (listadoPrueba) //objeto falso
             const store = new PeliculasStore()
             await store.cargarListado()
 
@@ -28,13 +28,13 @@ describe ('PeliculasStore', () =>
             expect (store.errorListado).to.be.false
             expect (store.listado).to.deep.equal(listadoPrueba)
 
-            sinon.assert.calledOnce(servicioPeliculas.leerPeliculas) //se llamó una vez el método y que argumentos
+            sinon.assert.calledOnce(ServicioPeliculas.leerPeliculas) //se llamó una vez el método y que argumentos
             
         })
 
         it('debe indicar que hubo un error al cargar peklículas',async()=>
         {
-            sandbox.stub(servicioPeliculas, 'leerPeliculas').rejects (Error('Bum')) //objeto falso
+            sandbox.stub(ServicioPeliculas, 'leerPeliculas').rejects (Error('Bum')) //objeto falso
             const store = new PeliculasStore()
             await store.cargarListado()
 
@@ -42,7 +42,7 @@ describe ('PeliculasStore', () =>
             expect (store.errorListado).to.be.true
             expect (store.listado).to.deep.equal([])
 
-            sinon.assert.calledOnce(servicioPeliculas.leerPeliculas)
+            sinon.assert.calledOnce(ServicioPeliculas.leerPeliculas)
             
         })
     })
@@ -50,7 +50,7 @@ describe ('PeliculasStore', () =>
     {
         it('debe limpiar el listado de peliculas',async()=>
         {
-            sandbox.stub(servicioPeliculas, 'leerPeliculas').resolves (listadoPrueba) //objeto falso
+            sandbox.stub(ServicioPeliculas, 'leerPeliculas').resolves (listadoPrueba) //objeto falso
             const store = new PeliculasStore()
             await store.cargarListado()
 

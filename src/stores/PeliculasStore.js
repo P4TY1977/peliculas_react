@@ -13,7 +13,7 @@ export default class PeliculasStore
    {
 	   this.errorListado = false
 	   try{
-		   this.listado = await servicioPeliculas.leerPeliculas()
+		   this.listado = await ServicioPeliculas.leerPeliculas()
 		   this.listadoCargado= true
 	   }
 
