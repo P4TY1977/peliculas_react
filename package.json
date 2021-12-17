@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "reload -b -w dist",
-    "test": "jest"
+    "test": "npm run test-unitnpm",
+    "test-unit": "jest"
   },
   "author": "Patricia",
   "license": "ISC",
