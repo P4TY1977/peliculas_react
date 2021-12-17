@@ -1,6 +1,6 @@
 
 import { makeAutoObservable } from 'mobx'
-import servicioPeliculas from '../services/servicioPeliculas'
+import ServicioPeliculas from '../services/ServicioPeliculas'
 export default class PeliculasStore
 {
 	constructor()
