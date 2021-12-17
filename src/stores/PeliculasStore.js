@@ -1,6 +1,6 @@
 
 import { makeAutoObservable } from 'mobx'
-import servicioPeliculas from '../services/servicioPeliculas'
+import ServicioPeliculas from '../services/ServicioPeliculas'
 export default class PeliculasStore
 {
 	constructor()
@@ -13,7 +13,7 @@ export default class PeliculasStore
    {
 	   this.errorListado = false
 	   try{
-		   this.listado = await servicioPeliculas.leerPeliculas()
+		   this.listado = await ServicioPeliculas.leerPeliculas()
 		   this.listadoCargado= true
 	   }
 
