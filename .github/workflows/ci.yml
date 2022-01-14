@@ -13,4 +13,5 @@ jobs:
     - run: npm install
     - name: ejecutar pruebas unitarias
       run: npm run test-unit
-    
+    - name: ejecutar pruebas de integración
+      run: npm run test-integration
