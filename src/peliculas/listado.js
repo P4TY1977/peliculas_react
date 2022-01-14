@@ -46,7 +46,7 @@ class ListadoPeliculas extends React.Component
              <DetallePelicula datos={ pelicula }/>
             ))}
             </div>
-                <Link to="/" className="btn btn-outline-light mt-5 mb-5"><i className="bi-house-fill display-4"></i></Link>                
+                <Link to="/" className="btn btn-outline-light mt-5 mb-5" id="Home"><i className="bi-house-fill display-4"></i></Link>                
             </div>
         )
     }
