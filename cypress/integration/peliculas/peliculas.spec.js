@@ -8,6 +8,7 @@ describe ('Página principal: Se abre HOME y funciona su navegación',()=>{
         cy.contains('HBOPaty')        
     })
     it ('Dar click en peliculas infantiles verificar que la URL fué a la página correcta y regresar a HOME',()=>{        
+        cy.visit('http://localhost:8080')
         cy.get('a').contains('Peliculas Infantiles').click()
        // cy.url().should('include', '/peliculas/A')
       //  cy.get('#Home').click()
