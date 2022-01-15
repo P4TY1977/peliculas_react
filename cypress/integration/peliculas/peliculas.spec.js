@@ -12,7 +12,7 @@ describe ('Página principal: Se abre HOME y funciona su navegación',()=>{
         //cy.get('a[href*="peliculas/A"]').click()
         //  cy.contains('Peliculas Infantiles').click()
         cy.url().should('include', '/peliculas/A')
-      //  cy.get('#Home').click()
+        cy.get('#Home').click()
         //cy.url().should('eq', 'http://localhost:8080/#/')        
     })
     it ('Dar click en peliculas para adolescentes verificar que la URL fué a la página correcta y regresar a HOME',()=>{       
