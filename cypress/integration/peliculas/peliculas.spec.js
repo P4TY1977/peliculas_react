@@ -11,7 +11,7 @@ describe ('Página principal: Se abre HOME y funciona su navegación',()=>{
         cy.visit('http://localhost:8080/#/peliculas/A')
         //cy.get('a[href*="peliculas/A"]').click()
         //  cy.contains('Peliculas Infantiles').click()
-        cy.url().should('include', '/peliculas/A')
+       // cy.url().should('include', '/peliculas/A')
         cy.get('#Home').click()
         //cy.url().should('eq', 'http://localhost:8080/#/')        
     })
