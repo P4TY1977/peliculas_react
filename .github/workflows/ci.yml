@@ -14,5 +14,5 @@ jobs:
    # - run: npx browserslist@latest --update-db
     - name: ejecutar pruebas unitarias
       run: npm run test-unit
-    - name: ejecutar pruebas de integración
-      run: npm run test-integration
+   # - name: ejecutar pruebas de integración
+    #  run: npm run test-integration
