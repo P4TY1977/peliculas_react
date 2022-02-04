@@ -9,6 +9,7 @@ export default class PeliculasStore
   errorListado = false
    listadoCargado = false
    listado =[]
+   seleccionado={}  //Registro editable
    async cargarListado()
    {
 	   this.errorListado = false
@@ -30,6 +31,13 @@ export default class PeliculasStore
 	   this.listado =[]
 	   this.listadoCargado = false
 	   this.errorListado = false
+   }
+
+   seleccionar(id)
+   {
+	   const registro = this.listado.find(actual => actual.id == id)
+	   if (registro)
+	   this.seleccionado = {...registro} // esto hace una copia del registro
    }
 
 	cambiarNombre( nombre,indice )

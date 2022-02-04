@@ -4,12 +4,15 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: '12'
+        node-version: '14'
     - run: npm install
+   # - run: npx browserslist@latest --update-db
     - name: ejecutar pruebas unitarias
       run: npm run test-unit
+   # - name: ejecutar pruebas de integración
+    #  run: npm run test-integration
