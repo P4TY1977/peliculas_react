@@ -16,23 +16,22 @@ class EdicionPelicula extends React.Component
    {
     const {seleccionado}= this.props.peliculas
     seleccionado[event.target.name]= event.target.value
-   }
-   validar (event) {          
-          event.form.classList.add('was-validated')        
-        }
+   }   
     render()
     {
         const {seleccionado}= this.props.peliculas
+        const nombreEsValido = Boolean(seleccionado.nombre)
+        const esValido = nombreEsValido // fecha y etc.
         
         return(  //siempre paréntesis para que no se confunda el compilador
             <div>
-            <form className="row g-3 needs-validation" novalidate onSubmit={ event => {this.validar(event)}}> 
+            <form className="row g-3 needs-validation" novalidate> 
             
                 <div className="mb-2">
                     <label for="nombre" className="form-label">Nombre</label>
                     <div className="input-group has-validation">
                         <input name="nombre" id="nombre" type="text" value ={seleccionado.nombre} onChange={event => {this.aplicar(event)}} className="form-control" required/>
-                        <div className="invalid-feedback">
+                        <div className={`invalid-feedback ${esValido ? 'd-none': 'd-block'}`}>
                             Asignale un nombre, no puedes dejar el campo en blanco
                         </div>
                         <div className="valid-feedback">
@@ -64,7 +63,7 @@ class EdicionPelicula extends React.Component
                     </select>
                 </div> 
                 <div className="col-12">
-                <button className="btn btn-light" type="submit">Enviar</button>
+                <button className="btn btn-light" type="button" disabled={!esValido}>Enviar</button>
   </div>
             </form>   
             <Link to={`/peliculas/${seleccionado.clasificacion}` } className="btn btn-outline-light mt-5 mb-5 position-absolute bottom-0 start-50 translate-middle"><i className="bi bi-reply-fill display-4"></i></Link>
