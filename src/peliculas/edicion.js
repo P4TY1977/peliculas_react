@@ -9,6 +9,8 @@ class EdicionPelicula extends React.Component
         const {match, peliculas}=props
         if (match.params.id != props.peliculas.seleccionado.id)       
             peliculas.seleccionar(match.params.id)
+
+        this.state = {aceptoTerminos: false}
         
     }
 
@@ -21,7 +23,7 @@ class EdicionPelicula extends React.Component
     {
         const {seleccionado}= this.props.peliculas
         const nombreEsValido = Boolean(seleccionado.nombre)
-        const esValido = nombreEsValido // fecha y etc.
+        const esValido = nombreEsValido && this.state.aceptoTerminos
         
         return(  //siempre paréntesis para que no se confunda el compilador
             <div>
@@ -31,7 +33,7 @@ class EdicionPelicula extends React.Component
                     <label for="nombre" className="form-label">Nombre</label>
                     <div className="input-group has-validation">
                         <input name="nombre" id="nombre" type="text" value ={seleccionado.nombre} onChange={event => {this.aplicar(event)}} className="form-control" required/>
-                        <div className={`invalid-feedback ${esValido ? 'd-none': 'd-block'}`}>
+                        <div className={`invalid-feedback ${nombreEsValido ? 'd-none': 'd-block'}`}>
                             Asignale un nombre, no puedes dejar el campo en blanco
                         </div>
                         <div className="valid-feedback">
@@ -62,6 +64,10 @@ class EdicionPelicula extends React.Component
                         <option value="Thriller">Thriller</option>                        
                     </select>
                 </div> 
+                <div>
+                    <input type="checkbox" onClick={event => this.setState({ aceptoTerminos: event.target.checked })}/>
+                    Acepto términos y condiciones
+                </div>
                 <div className="col-12">
                 <button className="btn btn-light" type="button" disabled={!esValido}>Enviar</button>
   </div>
