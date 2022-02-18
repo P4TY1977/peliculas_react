@@ -1,5 +1,5 @@
 
-const SERVIDOR ='https://santiagoarriaga.github.io/peliculas.json'
+const SERVIDOR ='https://santiagoarriaga.github.io'
 const leerPeliculas = async () =>
 {
     const url =`${SERVIDOR}/peliculas.json`
