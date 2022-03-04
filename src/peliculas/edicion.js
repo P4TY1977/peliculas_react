@@ -65,14 +65,14 @@ class EdicionPelicula extends React.Component
                     </select>
                 </div> 
                 <div>
-                    <input type="checkbox" onClick={event => this.setState({ aceptoTerminos: event.target.checked })}/>
+                    <input type="checkbox" onClick={event => this.setState({ aceptoTerminos: event.target.checked })} id="acepto"/>
                     Acepto términos y condiciones
                 </div>
                 <div className="col-12">
-                <button className="btn btn-light" type="button" disabled={!esValido}>Enviar</button>
+                <button className="btn btn-light" type="button" disabled={!esValido} id="enviar">Enviar</button>
   </div>
             </form>   
-            <Link to={`/peliculas/${seleccionado.clasificacion}` } className="btn btn-outline-light mt-5 mb-5 position-absolute bottom-0 start-50 translate-middle"><i className="bi bi-reply-fill display-4"></i></Link>
+            <Link to={`/peliculas/${seleccionado.clasificacion}` } className="btn btn-outline-light mt-5 mb-5 position-absolute bottom-0 start-50 translate-middle" id="regresar"><i className="bi bi-reply-fill display-4"></i></Link>
            
             </div>
             
